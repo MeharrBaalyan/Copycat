@@ -6,128 +6,108 @@ body {
   padding: 20px;
 }
 
+.frame {
+  background: white;
+  border: 4px solid #777;
+  border-radius: 8px;
+  padding: 14px;
+}
+
 .canvas {
   position: relative;
-  width: 288px;
-  height: 388px;
-  background: #9a9bb0;
-  border: 6px solid #5a4a42;
+  width: 300px;
+  height: 375px;
+  background: #a08b79;
+  border: 4px solid #6b5b4f;
+  border-radius: 4px;
   overflow: hidden;
 }
 
-/* wall */
-.wall { position: absolute; }
-.w1 { left: 0;   top: 0;   width: 288px; height: 150px; background: #8996b4; }
-.w2 { left: 0;   top: 150px; width: 110px; height: 170px; background: #c9a3a6; }
-.w3 { left: 200px; top: 150px; width: 88px; height: 170px; background: #7f9b9e; }
-
-/* table */
+/* table: a wide red oval, cropped by the canvas */
 .table {
   position: absolute;
-  left: -20px;
-  top: 290px;
-  width: 330px;
-  height: 140px;
-  background: #c23b1e;
-  border-radius: 50%;
-}
-.patch { position: absolute; border-radius: 50%; }
-.p1 { left: 20px;  top: 335px; width: 90px;  height: 30px; background: #e0561f; }
-.p2 { left: 190px; top: 340px; width: 80px;  height: 26px; background: #8f2a14; }
-.p3 { left: 110px; top: 355px; width: 70px;  height: 20px; background: #e0561f; }
-.shadow {
-  position: absolute;
-  left: 80px;
-  top: 340px;
-  width: 130px;
-  height: 30px;
-  background: #8f2a14;
+  left: -6px;
+  top: 297px;
+  width: 312px;
+  height: 80px;
+  background: #8b3519;
   border-radius: 50%;
 }
 
 /* vase */
 .vase {
   position: absolute;
-  left: 100px;
-  top: 250px;
-  width: 84px;
-  height: 100px;
-  background: #e8e2d0;
-  border: 3px solid #b8b09a;
-  border-radius: 8px 8px 35px 35px;
+  left: 111px;
+  top: 205px;
+  width: 72px;
+  height: 135px;
+  background: #c9b78e;
+  border: 3px solid #8f8061;
+  border-radius: 8px 8px 30px 30px;
 }
-.vase::before, .vase::after {
-  content: "";
-  position: absolute;
-  background: #3d5f9a;
-  border-radius: 50%;
-}
-.vase::before { left: 10px; top: 45px; width: 30px; height: 22px; }
-.vase::after  { left: 30px; top: 62px; width: 20px; height: 14px; }
 
-/* leaves */
+/* leaves: dark outline, turned and slanted */
 .leaf {
   position: absolute;
-  width: 38px;
-  height: 78px;
-  border-radius: 0 100% 0 100%;
+  border: 3px solid #16301f;
+  border-radius: 3px;
+  transform: translate(-50%, -50%) rotate(var(--r)) skewX(-15deg);
 }
-.dark  { background: #1f4a33; }
-.mid   { background: #3e7a4c; }
-.light { background: #6a9a62; }
-.b1 { left: 55px; top: 50px; transform: rotate(-35deg); }
-.b2 { left: 170px; top: 5px; transform: rotate(25deg); }
-.b3 { left: 150px; top: 100px; transform: rotate(35deg); }
-.b4 { left: 75px; top: 140px; transform: rotate(200deg); }
-.b5 { left: 185px; top: 160px; transform: rotate(150deg); }
-.b6 { left: 15px; top: 150px; transform: rotate(-25deg); }
-.b7 { left: 245px; top: 80px; transform: rotate(35deg); }
-.b8 { left: 100px; top: 60px; transform: rotate(-10deg); }
+.dark { background: #1c3a28; }
+.mid  { background: #4f7d52; }
+.teal { background: #2f5f49; }
 
-.d1 { left: 65px; top: 225px; transform: rotate(200deg); }
-.d2 { left: 25px; top: 235px; transform: rotate(170deg); }
-.d3 { left: 110px; top: 240px; transform: rotate(185deg); }
-.d4 { left: 190px; top: 235px; transform: rotate(165deg); }
-.d5 { left: 225px; top: 225px; transform: rotate(200deg); }
-.d6 { left: 160px; top: 245px; transform: rotate(175deg); }
+.l1 { left: 74px; top: 91px; width: 45px; height: 24px; --r: -10deg; }
+.l2 { left: 103px; top: 86px; width: 27px; height: 45px; --r: 15deg; }
+.l3 { left: 115px; top: 62px; width: 17px; height: 38px; --r: 20deg; }
+.l4 { left: 194px; top: 56px; width: 27px; height: 30px; --r: -15deg; }
+.l5 { left: 219px; top: 64px; width: 22px; height: 17px; --r: 10deg; }
+.l6 { left: 248px; top: 76px; width: 41px; height: 26px; --r: -25deg; }
+.l7 { left: 66px; top: 107px; width: 41px; height: 26px; --r: 20deg; }
+.l8 { left: 190px; top: 140px; width: 36px; height: 32px; --r: 10deg; }
+.l9 { left: 236px; top: 137px; width: 41px; height: 26px; --r: -25deg; }
+.l10 { left: 70px; top: 199px; width: 22px; height: 49px; --r: -10deg; }
+.l11 { left: 99px; top: 199px; width: 30px; height: 41px; --r: 5deg; }
+.l12 { left: 149px; top: 190px; width: 45px; height: 52px; --r: 20deg; }
+.l13 { left: 178px; top: 166px; width: 22px; height: 41px; --r: 0deg; }
+.l14 { left: 211px; top: 178px; width: 26px; height: 38px; --r: 8deg; }
 
-/* sunflower: three rounded squares turned 0, 30 and 60 degrees = 12 petals */
+/* sunflower: a 20-point star cut out of a yellow square */
 .flower {
   position: absolute;
-  border-radius: 28%;
-  isolation: isolate;
+  background: #f9c855;
+  transform: translate(-50%, -50%);
+  clip-path: polygon(50.0% 0.0%, 55.9% 12.5%, 65.5% 2.4%, 67.3% 16.1%,
+    79.4% 9.5%, 76.9% 23.1%, 90.5% 20.6%, 83.9% 32.7%,
+    97.6% 34.5%, 87.5% 44.1%, 100.0% 50.0%, 87.5% 55.9%,
+    97.6% 65.5%, 83.9% 67.3%, 90.5% 79.4%, 76.9% 76.9%,
+    79.4% 90.5%, 67.3% 83.9%, 65.5% 97.6%, 55.9% 87.5%,
+    50.0% 100.0%, 44.1% 87.5%, 34.5% 97.6%, 32.7% 83.9%,
+    20.6% 90.5%, 23.1% 76.9%, 9.5% 79.4%, 16.1% 67.3%,
+    2.4% 65.5%, 12.5% 55.9%, 0.0% 50.0%, 12.5% 44.1%,
+    2.4% 34.5%, 16.1% 32.7%, 9.5% 20.6%, 23.1% 23.1%,
+    20.6% 9.5%, 32.7% 16.1%, 34.5% 2.4%, 44.1% 12.5%);
 }
-.gold   { background: #f0b429; }
-.orange { background: #e0861f; }
 
-.flower::before,
-.flower i {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: inherit;
-  border-radius: 28%;
-  z-index: -1;
-}
-.flower::before { transform: rotate(30deg); }
-.flower i       { transform: rotate(60deg); }
-
-/* center: brown circle with an orange ring */
+/* brown center */
 .flower::after {
   content: "";
   position: absolute;
-  inset: 28%;
-  background: #5e3318;
-  border: 4px solid #b8621b;
+  inset: 32%;
+  background: #6b2d24;
   border-radius: 50%;
 }
+.f3::after { inset: 36% 26%; }   /* flatter center on the top right flower */
 
-.f1 { left: 70px; top: 8px; width: 78px; height: 78px; }
-.f2 { left: 185px; top: 38px; width: 68px; height: 68px; }
-.f3 { left: -10px; top: 100px; width: 74px; height: 74px; }
-.f4 { left: 100px; top: 92px; width: 86px; height: 86px; }
-.f5 { left: 212px; top: 118px; width: 66px; height: 66px; }
-.f6 { left: 48px; top: 62px; width: 50px; height: 50px; }
-.f7 { left: 25px; top: 178px; width: 68px; height: 68px; }
-.f8 { left: 118px; top: 185px; width: 72px; height: 72px; }
-.f9 { left: 208px; top: 196px; width: 60px; height: 60px; }
+.f1 { left: 82px; top: 57px; width: 71px; height: 71px; }
+.f2 { left: 165px; top: 59px; width: 79px; height: 79px; }
+.f3 { left: 240px; top: 47px; width: 87px; height: 87px; }
+.f4 { left: 143px; top: 111px; width: 46px; height: 46px; }
+.f5 { left: 215px; top: 113px; width: 76px; height: 76px; }
+.f6 { left: 103px; top: 153px; width: 93px; height: 93px; }
+.f7 { left: 205px; top: 228px; width: 91px; height: 91px; }
+
+/* flowers 1-3 sit behind the leaves */
+.f1, .f2, .f3 { z-index: 0; }
+.leaf { z-index: 1; }
+.f4, .f5, .f6, .f7 { z-index: 2; }
