@@ -5,69 +5,72 @@ body {
   padding: 20px;
   display: flex;
   justify-content: center;
-  background: #f4f4f4;
 }
 
-/* the painting */
 .canvas {
   position: relative;
   width: 300px;
   height: 400px;
-  background: #a08b79;
-  border: 6px solid #6b5b4f;
+  background: #9d9aab;
+  border: 6px solid #5a4a42;
   overflow: hidden;
 }
 
-/* table: a wide oval that gets cropped by the canvas */
 .table {
   position: absolute;
   left: -20px;
   top: 300px;
   width: 330px;
   height: 130px;
-  background: #8b3519;
+  background: #c23b1e;
   border-radius: 50%;
 }
 
-/* vase */
 .vase {
   position: absolute;
   left: 94px;
-  top: 220px;
+  top: 235px;
   width: 100px;
-  height: 140px;
-  background: #c9b78e;
-  border: 4px solid #8f8061;
+  height: 130px;
+  background: #e8e2d0;
+  border: 3px solid #b8b09a;
   border-radius: 8px 8px 35px 35px;
 }
 
-/* leaves: squares turned into diamonds */
+/* blue pattern on the vase */
+.vase::after {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 60px;
+  width: 25px;
+  height: 35px;
+  background: #3d5f9a;
+  border-radius: 50%;
+}
+
+/* leaves */
 .leaf {
   position: absolute;
-  width: 50px;
-  height: 50px;
-  border: 3px solid #16301f;
-  transform: rotate(45deg);
+  width: 40px;
+  height: 75px;
+  border-radius: 0 100% 0 100%;
 }
-.dark { background: #1c3a28; }
-.mid  { background: #4f7d52; }
+.dark { background: #1f4a33; }
+.mid  { background: #4d8050; }
 
-.l1 { left: 55px;  top: 90px; }
-.l2 { left: 125px; top: 80px; }
-.l3 { left: 195px; top: 100px; }
-.l4 { left: 30px;  top: 170px; }
-.l5 { left: 120px; top: 150px; }
-.l6 { left: 210px; top: 175px; }
-.l7 { left: 75px;  top: 215px; }
-.l8 { left: 165px; top: 220px; }
+.l1 { left: 60px;  top: 70px;  transform: rotate(-20deg); }
+.l2 { left: 170px; top: 90px;  transform: rotate(25deg); }
+.l3 { left: 85px;  top: 160px; transform: rotate(160deg); }
+.l4 { left: 190px; top: 175px; transform: rotate(200deg); }
+.l5 { left: 35px;  top: 215px; transform: rotate(150deg); }
+.l6 { left: 215px; top: 205px; transform: rotate(210deg); }
+.l7 { left: 125px; top: 215px; transform: rotate(180deg); }
 
-/* sunflowers: two rounded squares (one turned 45deg) make 8 petals,
-   and ::after is the brown center */
+/* sunflowers: two squares (one turned 45deg) = 8 petals */
 .flower {
   position: absolute;
-  width: 70px;
-  height: 70px;
-  background: #f9c855;
+  background: #f0b429;
   border-radius: 30%;
   isolation: isolate;
 }
@@ -75,7 +78,7 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: #f9c855;
+  background: #f0b429;
   border-radius: 30%;
   transform: rotate(45deg);
   z-index: -1;
@@ -83,17 +86,16 @@ body {
 .flower::after {
   content: "";
   position: absolute;
-  left: 22px;
-  top: 22px;
-  width: 26px;
-  height: 26px;
-  background: #6b2d24;
+  inset: 30%;
+  background: #6b3a1e;
+  border: 4px solid #c9791a;
   border-radius: 50%;
 }
 
-.f1 { left: 20px;  top: 30px; }
-.f2 { left: 110px; top: 15px; }
-.f3 { left: 200px; top: 40px; }
-.f4 { left: 45px;  top: 115px; }
-.f5 { left: 170px; top: 120px; }
-.f6 { left: 110px; top: 190px; }
+.f1 { left: 85px;  top: 15px;  width: 70px; height: 70px; }
+.f2 { left: 190px; top: 40px;  width: 66px; height: 66px; }
+.f3 { left: 5px;   top: 100px; width: 70px; height: 70px; }
+.f4 { left: 100px; top: 95px;  width: 84px; height: 84px; }
+.f5 { left: 215px; top: 135px; width: 62px; height: 62px; }
+.f6 { left: 35px;  top: 175px; width: 66px; height: 66px; }
+.f7 { left: 140px; top: 185px; width: 70px; height: 70px; }
