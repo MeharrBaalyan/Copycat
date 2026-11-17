@@ -1,82 +1,73 @@
-/* ---------- COMMIT 1: frame, wall, table, vase ---------- */
 * { box-sizing: border-box; }
 
 body {
-  margin: 0;
-  min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background: #f4f4f4;
-}
-
-.frame {
-  background: white;
-  border: 5px solid #777;
-  border-radius: 10px;
-  padding: 18px;
+  padding: 20px;
 }
 
 .canvas {
   position: relative;
-  width: 400px;
-  height: 500px;
+  width: 300px;
+  height: 400px;
   background: #a08b79;
-  border: 4px solid #6b5b4f;
-  border-radius: 6px;
+  border: 6px solid #6b5b4f;
   overflow: hidden;
 }
 
 .table {
   position: absolute;
   left: -10px;
-  top: 396px;
-  width: 420px;
-  height: 108px;
+  top: 310px;
+  width: 320px;
+  height: 120px;
   background: #8b3519;
   border-radius: 50%;
 }
 
 .vase {
   position: absolute;
-  left: 149px;
-  top: 274px;
-  width: 104px;
-  height: 186px;
+  left: 100px;
+  top: 230px;
+  width: 100px;
+  height: 140px;
   background: #c9b78e;
   border: 4px solid #8f8061;
-  border-radius: 6px 6px 36px 36px;
+  border-radius: 8px 8px 35px 35px;
 }
 
-.vase::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  left: -4px;
-  right: -4px;
-  height: 18px;
-  background: #c9b78e;
-  border: 4px solid #8f8061;
-  border-radius: 50%;
-}
-
-/* ---------- COMMIT 2: leaves ---------- */
+/* leaves: squares turned into diamonds */
 .leaf {
   position: absolute;
-  z-index: 2;
-  width: var(--w);
-  height: var(--h);
-  left: var(--x);
-  top: var(--y);
+  width: 55px;
+  height: 55px;
   border: 3px solid #16301f;
-  border-radius: 4px;
-  transform: translate(-50%, -50%) rotate(var(--r)) skewX(-15deg);
+  transform: rotate(45deg);
 }
-.leaf.dark { background: #1c3a28; }
-.leaf.mid  { background: #4f7d52; }
-.leaf.teal { background: #2f5f49; }
+.dark { background: #1c3a28; }
+.mid  { background: #4f7d52; }
 
-.l1  { --x: 99px;  --y: 121px; --w: 78px; --h: 42px; --r: -10deg; }
-.l2  { --x: 137px; --y: 115px; --w: 47px; --h: 78px; --r: 15deg; }
-.l3  { --x: 154px; --y: 82px;  --w: 29px; --h: 65px; --r: 20deg; }
-.l4  { --x: 259px; --y: 74px;  --w: 47px; --h: 52px; --r:
+.l1 { left: 30px;  top: 120px; }
+.l2 { left: 100px; top: 90px; }
+.l3 { left: 190px; top: 100px; }
+.l4 { left: 215px; top: 160px; }
+.l5 { left: 60px;  top: 190px; }
+.l6 { left: 150px; top: 180px; }
+
+/* flowers: brown center + dotted yellow border makes the petals */
+.flower {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 9px dotted #f9c855;
+  background: radial-gradient(circle, #6b2d24 0 25%, #f9c855 26%);
+  background-clip: padding-box;
+}
+
+.f1 { left: 10px;  top: 20px; }
+.f2 { left: 110px; top: 10px; }
+.f3 { left: 205px; top: 35px; }
+.f4 { left: 40px;  top: 110px; }
+.f5 { left: 175px; top: 125px; }
+.f6 { left: 110px; top: 200px; }
