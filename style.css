@@ -1,4 +1,4 @@
-
+/* ---------- COMMIT 1: frame, wall, table, vase ---------- */
 * { box-sizing: border-box; }
 
 body {
@@ -18,13 +18,13 @@ body {
 }
 
 .canvas {
-  position: relative;            
+  position: relative;
   width: 400px;
   height: 500px;
-  background: #a08b79;           /* wall */
+  background: #a08b79;
   border: 4px solid #6b5b4f;
   border-radius: 6px;
-  overflow: hidden;              /* crops the table at the edges */
+  overflow: hidden;
 }
 
 .table {
@@ -48,7 +48,7 @@ body {
   border-radius: 6px 6px 36px 36px;
 }
 
-.vase::before {                  /* the rim */
+.vase::before {
   content: "";
   position: absolute;
   top: -10px;
@@ -59,3 +59,24 @@ body {
   border: 4px solid #8f8061;
   border-radius: 50%;
 }
+
+/* ---------- COMMIT 2: leaves ---------- */
+.leaf {
+  position: absolute;
+  z-index: 2;
+  width: var(--w);
+  height: var(--h);
+  left: var(--x);
+  top: var(--y);
+  border: 3px solid #16301f;
+  border-radius: 4px;
+  transform: translate(-50%, -50%) rotate(var(--r)) skewX(-15deg);
+}
+.leaf.dark { background: #1c3a28; }
+.leaf.mid  { background: #4f7d52; }
+.leaf.teal { background: #2f5f49; }
+
+.l1  { --x: 99px;  --y: 121px; --w: 78px; --h: 42px; --r: -10deg; }
+.l2  { --x: 137px; --y: 115px; --w: 47px; --h: 78px; --r: 15deg; }
+.l3  { --x: 154px; --y: 82px;  --w: 29px; --h: 65px; --r: 20deg; }
+.l4  { --x: 259px; --y: 74px;  --w: 47px; --h: 52px; --r:
