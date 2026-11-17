@@ -1,11 +1,14 @@
 * { box-sizing: border-box; }
 
 body {
+  margin: 0;
+  padding: 20px;
   display: flex;
   justify-content: center;
-  padding: 20px;
+  background: #f4f4f4;
 }
 
+/* the painting */
 .canvas {
   position: relative;
   width: 300px;
@@ -15,20 +18,22 @@ body {
   overflow: hidden;
 }
 
+/* table: a wide oval that gets cropped by the canvas */
 .table {
   position: absolute;
-  left: -10px;
-  top: 310px;
-  width: 320px;
-  height: 120px;
+  left: -20px;
+  top: 300px;
+  width: 330px;
+  height: 130px;
   background: #8b3519;
   border-radius: 50%;
 }
 
+/* vase */
 .vase {
   position: absolute;
-  left: 100px;
-  top: 230px;
+  left: 94px;
+  top: 220px;
   width: 100px;
   height: 140px;
   background: #c9b78e;
@@ -39,35 +44,56 @@ body {
 /* leaves: squares turned into diamonds */
 .leaf {
   position: absolute;
-  width: 55px;
-  height: 55px;
+  width: 50px;
+  height: 50px;
   border: 3px solid #16301f;
   transform: rotate(45deg);
 }
 .dark { background: #1c3a28; }
 .mid  { background: #4f7d52; }
 
-.l1 { left: 30px;  top: 120px; }
-.l2 { left: 100px; top: 90px; }
-.l3 { left: 190px; top: 100px; }
-.l4 { left: 215px; top: 160px; }
-.l5 { left: 60px;  top: 190px; }
-.l6 { left: 150px; top: 180px; }
+.l1 { left: 55px;  top: 90px; }
+.l2 { left: 125px; top: 80px; }
+.l3 { left: 195px; top: 100px; }
+.l4 { left: 30px;  top: 170px; }
+.l5 { left: 120px; top: 150px; }
+.l6 { left: 210px; top: 175px; }
+.l7 { left: 75px;  top: 215px; }
+.l8 { left: 165px; top: 220px; }
 
-/* flowers: brown center + dotted yellow border makes the petals */
+/* sunflowers: two rounded squares (one turned 45deg) make 8 petals,
+   and ::after is the brown center */
 .flower {
   position: absolute;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
+  background: #f9c855;
+  border-radius: 30%;
+  isolation: isolate;
+}
+.flower::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #f9c855;
+  border-radius: 30%;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+.flower::after {
+  content: "";
+  position: absolute;
+  left: 22px;
+  top: 22px;
+  width: 26px;
+  height: 26px;
+  background: #6b2d24;
   border-radius: 50%;
-  border: 9px dotted #f9c855;
-  background: radial-gradient(circle, #6b2d24 0 25%, #f9c855 26%);
-  background-clip: padding-box;
 }
 
-.f1 { left: 10px;  top: 20px; }
-.f2 { left: 110px; top: 10px; }
-.f3 { left: 205px; top: 35px; }
-.f4 { left: 40px;  top: 110px; }
-.f5 { left: 175px; top: 125px; }
-.f6 { left: 110px; top: 200px; }
+.f1 { left: 20px;  top: 30px; }
+.f2 { left: 110px; top: 15px; }
+.f3 { left: 200px; top: 40px; }
+.f4 { left: 45px;  top: 115px; }
+.f5 { left: 170px; top: 120px; }
+.f6 { left: 110px; top: 190px; }
